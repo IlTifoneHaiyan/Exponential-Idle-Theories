@@ -4,8 +4,8 @@ import { BigNumber } from "./api/BigNumber";
 import { theory } from "./api/Theory";
 import { Utils } from "./api/Utils";
 
-var id = "derivative_equation";
-var name = "Derivative Equation";
+var id = "lecipollehannoicazzi";
+var name = "lecipollehannoicazzi";
 var description = "\
 A simple theory.\n\
 x increase over time,\n\
@@ -57,8 +57,8 @@ var isMaxRhoOver = (over) => theory.tau.pow(10) >= BigNumber.from(over);
 var get2DGraphValue = () => rho.value.sign * (BigNumber.ONE + rho.value.abs()).log10().toNumber();
 var getPublicationMultiplier = (tau) => tau.pow(1.6) / BigNumber.TWO;
 var getPublicationMultiplierFormula = (symbol) => "\\frac{{" + symbol + "}^{1.6}}{2}";
-var getTau = () => rho.value.pow(BigNumber.from(0.1));
-var getCurrencyFromTau = (tau) => [tau.pow(10), rho.symbol];
+var getTau = () => rho.value;
+var getCurrencyFromTau = (tau) => [tau, rho.symbol];
 
 var resetX = () => {
   x = BigNumber.ZERO;
